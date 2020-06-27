@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int moneyCollected = 0;
+    
     public State state;
     private static GameManager _instance;
          public static GameManager Instance {

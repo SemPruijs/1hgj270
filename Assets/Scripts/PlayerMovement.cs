@@ -88,6 +88,14 @@ public class PlayerMovement : MonoBehaviour
           }
       }
 
+      private void OnTriggerEnter2D(Collider2D other)
+      {
+          if (other.gameObject.CompareTag("Money"))
+          {
+              GameManager.Instance.moneyCollected++;
+          }
+      }
+
       private void FixedUpdate()
       {
           _rb2d.AddForce (_movement * moveSpeed);
