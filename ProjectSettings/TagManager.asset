@@ -8,6 +8,7 @@ TagManager:
   - ShootPoint
   - Ground
   - AudioManager
+  - Money
   layers:
   - Default
   - TransparentFX
