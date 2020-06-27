@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public int moneyCollected = 0;
     public float timer = 30f;
+    public GameObject player;
     
     public State state;
     private static GameManager _instance;
@@ -65,5 +67,10 @@ public class GameManager : MonoBehaviour
     public void Credit()
     {
         state = State.Credit;
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

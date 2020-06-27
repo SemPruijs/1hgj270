@@ -11,6 +11,7 @@ public class DisplayManager : MonoBehaviour
     public GameObject credit;
 
     public Text collectedMoneyText;
+    public Text collectedMoneyText2;
     public Text timerText;
     
     void Update()
@@ -20,6 +21,7 @@ public class DisplayManager : MonoBehaviour
         playAgain.SetActive(GameManager.Instance.state == GameManager.State.PlayAgain);
         credit.SetActive(GameManager.Instance.state == GameManager.State.Credit);
         collectedMoneyText.text = GameManager.Instance.moneyCollected.ToString();
+        collectedMoneyText2.text = GameManager.Instance.moneyCollected.ToString();
         timerText.text = GameManager.Instance.timer.ToString("F0");
     }
 }

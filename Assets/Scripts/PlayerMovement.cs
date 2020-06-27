@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
       public bool turnAroundAnimation;
       public bool topDown;
 
+      public Vector3 startPosition;
+
       //Components
       private Rigidbody2D _rb2d;
       private AudioSource _audioSource;
@@ -34,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
       {
           _rb2d = GetComponent<Rigidbody2D>();
           _audioSource = GetComponent<AudioSource>();
+          startPosition = transform.position;
       }
   
       void Update()
