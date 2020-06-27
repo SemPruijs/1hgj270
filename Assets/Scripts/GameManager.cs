@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public int moneyCollected = 0;
+    public float timer = 30f;
     
     public State state;
     private static GameManager _instance;
@@ -36,6 +38,19 @@ public class GameManager : MonoBehaviour
         Menu();
     }
 
+    private void Update()
+    {
+        if (state == State.InGame)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0f)
+            {
+                state = State.PlayAgain;
+            }
+        }
+        Debug.Log(timer);
+    }
+
     public void Menu()
     {
         state = State.Menu;
@@ -44,6 +59,7 @@ public class GameManager : MonoBehaviour
     public void InGame()
     {
         state = State.InGame;
+        timer = 30f;
     }
 
     public void Credit()

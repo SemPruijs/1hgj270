@@ -98,12 +98,18 @@ public class PlayerMovement : MonoBehaviour
 
       private void FixedUpdate()
       {
-          _rb2d.AddForce (_movement * moveSpeed);
+          if (GameManager.Instance.state == GameManager.State.InGame)
+          {
+              _rb2d.AddForce (_movement * moveSpeed);    
+          }
       }
 
       private void Jump()
       {
-          _rb2d.AddForce(new Vector2(_rb2d.velocity.x, jumpForce));
-          _audioSource.PlayOneShot(jumpSound);
+          if (GameManager.Instance.state == GameManager.State.InGame)
+          {
+              _rb2d.AddForce(new Vector2(_rb2d.velocity.x, jumpForce));
+              _audioSource.PlayOneShot(jumpSound);
+          }
       }
 }
