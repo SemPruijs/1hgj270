@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
                 state = State.PlayAgain;
             }
         }
-        Debug.Log(timer);
     }
 
     public void Menu()
